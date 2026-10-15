@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Guía práctica y sesiones 1 a 1 para vender en línea y cobrar en dólares desde Venezuela, por el Abg. Ricardo Pineda.">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Salvoconducto Digital</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: página de pasaporte — un documento de viaje que sella la salida del negocio al mundo; columnas de contenido con un sello como única pieza audaz */
+:root{
+  --bg:#F1F4F3; --surface:#FFFFFF; --ink:#12202F; --muted:#56646F; --line:#D5DDDA;
+  --accent:#0B6E4F; --accent-ink:#FFFFFF; --stamp:#4B3A9C; --tint:#E3EEE9;
+  --display:"Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --body:"Public Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1519; --surface:#152027; --ink:#E6ECEA; --muted:#9DAAB0; --line:#26343B;
+    --accent:#4FC59A; --accent-ink:#06231A; --stamp:#A99BF2; --tint:#17302A; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1519; --surface:#152027; --ink:#E6ECEA; --muted:#9DAAB0; --line:#26343B;
+  --accent:#4FC59A; --accent-ink:#06231A; --stamp:#A99BF2; --tint:#17302A; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);line-height:1.08;text-wrap:balance;margin:0;letter-spacing:-0.015em}
+h1{font-size:clamp(2.3rem, 6vw, 4.2rem);font-weight:800}
+h2{font-size:clamp(1.8rem, 4vw, 2.6rem);font-weight:700}
+h3{font-size:1.25rem;font-weight:700}
+p{margin:0}
+.label{font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:600 1rem var(--body);padding:.9rem 1.4rem;border-radius:999px;border:1.5px solid var(--ink);color:var(--ink);background:transparent;text-decoration:none;cursor:pointer;transition:transform .15s, background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--stamp);outline-offset:2px}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top, 0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.85rem}
+.brand{font-family:var(--display);font-weight:800;font-size:1.15rem;text-decoration:none;display:flex;align-items:center;gap:.55rem}
+.brand-mark{width:28px;height:28px;border-radius:50%;border:2px solid var(--stamp);display:grid;place-items:center;font:500 .6rem var(--mono);color:var(--stamp)}
+.nav-links{display:flex;gap:1.4rem;font-size:.95rem}
+.nav-links a{text-decoration:none;color:var(--muted)}
+.nav-links a:hover{color:var(--ink)}
+@media (max-width:760px){.nav-links{display:none}}
+.nav .btn{padding:.55rem 1rem;font-size:.9rem}
+
+/* hero */
+.hero{padding-block:clamp(2.5rem,6vw,5rem)}
+.hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}}
+.hero-copy{display:flex;flex-direction:column;gap:1.4rem;min-width:0}
+.hero-copy h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:1.2rem;color:var(--muted);max-width:34em}
+.cta-row{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}
+.presale{font-family:var(--mono);font-size:.85rem;color:var(--stamp);display:flex;align-items:center;gap:.5rem}
+.presale::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--stamp)}
+
+/* passport card */
+.passport{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.6rem 1.6rem 1.2rem;box-shadow:0 18px 40px -24px rgba(18,32,47,.35);overflow:hidden;max-width:100%}
+.passport-top{display:flex;justify-content:space-between;gap:1rem}
+.field{display:flex;flex-direction:column;gap:.15rem;margin-top:1rem}
+.field b{font-family:var(--display);font-size:1.15rem}
+.field span{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:0 1rem}
+.stamp{position:absolute;right:1.1rem;top:5.2rem;width:132px;height:132px;border:3px solid var(--stamp);border-radius:50%;display:grid;place-items:center;text-align:center;color:var(--stamp);transform:rotate(-14deg);opacity:.9;font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;line-height:1.5;animation:stampIn .6s .3s both cubic-bezier(.2,1.6,.4,1)}
+.stamp::before{content:"";position:absolute;inset:7px;border:1px dashed var(--stamp);border-radius:50%}
+.stamp strong{display:block;font-family:var(--display);font-size:1.05rem;letter-spacing:0}
+@keyframes stampIn{from{transform:rotate(-30deg) scale(1.3);opacity:.9}to{transform:rotate(-14deg) scale(1);opacity:.9}}
+.mrz{margin-top:1.4rem;padding-top:.9rem;border-top:1px dashed var(--line);font-family:var(--mono);font-size:clamp(.62rem,1.6vw,.78rem);letter-spacing:.08em;color:var(--muted);overflow-x:auto;white-space:nowrap}
+
+/* sections */
+section{padding-block:clamp(3rem,7vw,5.5rem)}
+.section-head{display:flex;flex-direction:column;gap:.8rem;max-width:44rem;margin-bottom:2.5rem}
+.section-head p{color:var(--muted);font-size:1.1rem}
+.band{background:var(--surface);border-block:1px solid var(--line)}
+
+.pains{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+@media (max-width:860px){.pains{grid-template-columns:1fr}}
+.pain{display:flex;flex-direction:column;gap:.6rem;padding-top:1rem;border-top:2px solid var(--ink)}
+.pain p{color:var(--muted)}
+
+.modules{display:grid;grid-template-columns:repeat(2,1fr);gap:0 3rem;counter-reset:mod}
+@media (max-width:760px){.modules{grid-template-columns:1fr}}
+.module{display:grid;grid-template-columns:3.2rem 1fr;gap:1rem;padding-block:1.4rem;border-bottom:1px solid var(--line);counter-increment:mod}
+.module::before{content:counter(mod, decimal-leading-zero);font-family:var(--mono);font-size:.95rem;color:var(--accent);padding-top:.2rem}
+.module div{display:flex;flex-direction:column;gap:.35rem;min-width:0}
+.module p{color:var(--muted);font-size:.98rem}
+
+/* pricing */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;align-items:start}
+@media (max-width:900px){.plans{grid-template-columns:1fr}}
+.plan{display:flex;flex-direction:column;gap:1rem;padding:1.6rem;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.plan.featured{background:var(--surface);border:2px solid var(--accent);position:relative}
+.plan .tag{position:absolute;top:-.8rem;left:1.4rem;background:var(--accent);color:var(--accent-ink);font:500 .72rem var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:.25rem .65rem;border-radius:999px}
+.price{display:flex;align-items:baseline;gap:.5rem;font-variant-numeric:tabular-nums}
+.price b{font-family:var(--display);font-size:2.6rem;font-weight:800}
+.price s{color:var(--muted);font-size:1.05rem}
+.plan ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.55rem;font-size:.97rem}
+.plan li{display:grid;grid-template-columns:1.2rem 1fr;gap:.5rem}
+.plan li::before{content:"✓";color:var(--accent);font-weight:700}
+.plan .btn{margin-top:auto}
+.note{margin-top:1.4rem;color:var(--muted);font-size:.95rem}
+
+/* session */
+.session{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+@media (max-width:860px){.session{grid-template-columns:1fr}}
+.session .plan{max-width:28rem}
+
+/* author */
+.author{display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:start;max-width:52rem}
+@media (max-width:640px){.author{grid-template-columns:1fr}}
+.avatar{width:120px;height:120px;border-radius:50%;background:var(--tint);border:2px solid var(--accent);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:2.4rem;color:var(--accent)}
+.author-copy{display:flex;flex-direction:column;gap:1rem;min-width:0}
+.author-copy p{color:var(--muted)}
+
+/* reservation */
+.reserve-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+@media (max-width:860px){.reserve-grid{grid-template-columns:1fr}}
+.pay-list{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem}
+.pay-list span{font:500 .85rem var(--mono);padding:.35rem .75rem;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+form{display:flex;flex-direction:column;gap:1rem;padding:1.6rem;background:var(--surface);border:1px solid var(--line);border-radius:14px;min-width:0}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media (max-width:520px){.row{grid-template-columns:1fr}}
+label{display:flex;flex-direction:column;gap:.35rem;font-size:.9rem;font-weight:600}
+input,select{font:400 1rem var(--body);padding:.75rem .85rem;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);width:100%}
+.result{display:flex;flex-direction:column;gap:.75rem;padding:1rem;border-radius:10px;background:var(--tint)}
+.result pre{margin:0;white-space:pre-wrap;font:400 .88rem/1.5 var(--mono);color:var(--ink)}
+.result .actions{display:flex;flex-wrap:wrap;gap:.5rem}
+.result .btn{padding:.55rem 1rem;font-size:.9rem}
+.small{font-size:.85rem;color:var(--muted)}
+
+/* faq */
+.faq{max-width:48rem;display:flex;flex-direction:column}
+details{border-bottom:1px solid var(--line);padding-block:1.1rem}
+summary{cursor:pointer;font-family:var(--display);font-weight:700;font-size:1.15rem;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--mono);color:var(--accent)}
+details[open] summary::after{content:"–"}
+details p{margin-top:.7rem;color:var(--muted)}
+
+footer{border-top:1px solid var(--line);padding-block:2.5rem}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.88rem;color:var(--muted)}
+.foot p{max-width:40rem}
+</style>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#inicio"><span class="brand-mark">SD</span>Salvoconducto Digital</a>
+    <nav class="nav-links" aria-label="Secciones">
+      <a href="#contenido">Contenido</a>
+      <a href="#sesion">Sesión 1 a 1</a>
+      <a href="#precios">Precios</a>
+      <a href="#autor">Autor</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+    <a class="btn primary" href="#reservar">Reservar</a>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="wrap hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="presale">Preventa abierta · Edición 2026</p>
+        <h1>Vende en línea y cobra en <em>dólares</em> desde Venezuela.</h1>
+        <p class="lede">La guía práctica, escrita por un abogado, para montar tu negocio digital con la estructura correcta: empresa en EE.&nbsp;UU. o persona natural, cobros con Zelle, USDT y pasarelas locales, y las reglas básicas para vender sin sustos.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#reservar">Reservar mi guía · $37</a>
+          <a class="btn" href="#contenido">Ver el contenido</a>
+        </div>
+      </div>
+
+      <div class="passport" aria-label="Ficha de la guía">
+        <div class="passport-top">
+          <span class="label">Salvoconducto</span>
+          <span class="label">N.º 2026-01</span>
+        </div>
+        <div class="field"><span>Titular</span><b>Tu negocio digital</b></div>
+        <div class="fields">
+          <div class="field"><span>Origen</span><b>Venezuela</b></div>
+          <div class="field"><span>Destino</span><b>El mundo</b></div>
+          <div class="field"><span>Moneda</span><b>USD · USDT</b></div>
+          <div class="field"><span>Validez</span><b>2026</b></div>
+        </div>
+        <div class="stamp" aria-hidden="true"><div>PASO SEGURO<strong>APROBADO</strong>VEN → MUNDO</div></div>
+        <div class="mrz" aria-hidden="true">P&lt;VENSALVOCONDUCTO&lt;DIGITAL&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br>GUIA2026&lt;&lt;USD&lt;USDT&lt;ZELLE&lt;&lt;LLC&lt;&lt;&lt;&lt;&lt;&lt;&lt;04</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">El problema</span>
+        <h2>Tienes algo que vender. Lo difícil es cobrarlo.</h2>
+        <p>Miles de venezolanos tienen habilidades y productos con mercado afuera, pero se frenan en los mismos tres puntos.</p>
+      </div>
+      <div class="pains">
+        <div class="pain">
+          <h3>Las plataformas no te dejan entrar</h3>
+          <p>Muchas pasarelas internacionales no aceptan comercios registrados en Venezuela, y las tiendas en línea solo te muestran opciones locales.</p>
+        </div>
+        <div class="pain">
+          <h3>Demasiada información contradictoria</h3>
+          <p>LLC, USDT, Zelle, Zinli, Pago Móvil. Cada video dice algo distinto y nadie explica qué conviene en tu caso.</p>
+        </div>
+        <div class="pain">
+          <h3>Miedo a hacerlo mal</h3>
+          <p>Impuestos, bloqueos de cuentas, estafas y términos legales que no entiendes. Es más fácil no empezar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contenido">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">Qué aprendes</span>
+        <h2>De la idea al primer pago, en seis módulos.</h2>
+        <p>Cada módulo termina con una lista de pasos concretos. Lo lees, lo aplicas y pasas al siguiente.</p>
+      </div>
+      <div class="modules">
+        <div class="module"><div><h3>Elige tu modelo de negocio digital</h3><p>Productos digitales, servicios, tienda o afiliados: cuál encaja con tu capital y tu tiempo.</p></div></div>
+        <div class="module"><div><h3>La estructura legal correcta</h3><p>Persona natural, firma personal o LLC en EE.&nbsp;UU.: costos, requisitos y cuándo conviene cada una.</p></div></div>
+        <div class="module"><div><h3>Cuentas y métodos de cobro</h3><p>Zelle, USDT y Binance Pay, Zinli, Pago Móvil y pasarelas locales, con sus límites y riesgos.</p></div></div>
+        <div class="module"><div><h3>Tu tienda o página de ventas</h3><p>Montar el sitio, los botones de pago y la entrega automática de tus productos.</p></div></div>
+        <div class="module"><div><h3>Cumplimiento sin dolores de cabeza</h3><p>Términos y condiciones, privacidad, impuestos básicos y cómo protegerte de contracargos y estafas.</p></div></div>
+        <div class="module"><div><h3>Tus primeros clientes</h3><p>Redes sociales, WhatsApp y contenido para conseguir tus primeras ventas sin pagar anuncios.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="precios" class="band">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">Precios de preventa</span>
+        <h2>Reserva ahora con precio de lanzamiento.</h2>
+        <p>Quienes reserven en la preventa reciben la guía apenas esté lista, al precio más bajo que tendrá.</p>
+      </div>
+      <div class="plans">
+        <div class="plan">
+          <h3>Guía</h3>
+          <div class="price"><b>$37</b><s>$57</s></div>
+          <ul>
+            <li>Guía completa en PDF, seis módulos</li>
+            <li>Listas de pasos por módulo</li>
+            <li>Actualizaciones de la edición 2026</li>
+          </ul>
+          <a class="btn" href="#reservar" data-plan="Guía ($37)">Reservar la guía</a>
+        </div>
+        <div class="plan featured">
+          <span class="tag">Más elegido</span>
+          <h3>Paquete completo</h3>
+          <div class="price"><b>$47</b><s>$76</s></div>
+          <ul>
+            <li>Todo lo de la guía</li>
+            <li>Kit de plantillas legales editables</li>
+            <li>Planilla de control de ventas y precios en USD/Bs</li>
+            <li>Ahorras $9 frente a comprarlos por separado</li>
+          </ul>
+          <a class="btn primary" href="#reservar" data-plan="Paquete completo ($47)">Reservar el paquete</a>
+        </div>
+        <div class="plan">
+          <h3>Kit de plantillas</h3>
+          <div class="price"><b>$19</b></div>
+          <ul>
+            <li>Términos y condiciones para tienda en línea</li>
+            <li>Política de privacidad</li>
+            <li>Contrato de servicios para freelancers</li>
+            <li>Modelo de factura y recibo</li>
+          </ul>
+          <a class="btn" href="#reservar" data-plan="Kit de plantillas ($19)">Reservar el kit</a>
+        </div>
+      </div>
+      <p class="note">Precios en dólares estadounidenses. Aceptamos USDT por Binance y Pago Móvil en bolívares al cambio del día.</p>
+    </div>
+  </section>
+
+  <section id="sesion">
+    <div class="wrap session">
+      <div class="section-head" style="margin-bottom:0">
+        <span class="label">Disponible desde hoy</span>
+        <h2>¿Necesitas respuestas ya? Agenda una sesión 1 a 1.</h2>
+        <p>45 minutos por videollamada o WhatsApp con el Abg. Ricardo Pineda para revisar tu caso: qué figura te conviene, cómo cobrar desde Venezuela y qué riesgos evitar.</p>
+        <p>Sales de la sesión con un plan de pasos concretos para tu negocio, sin esperar a que salga la guía.</p>
+      </div>
+      <div class="plan featured">
+        <span class="tag">Cupos limitados</span>
+        <h3>Sesión de orientación</h3>
+        <div class="price"><b>$30</b></div>
+        <ul>
+          <li>45 minutos en vivo, por videollamada o WhatsApp</li>
+          <li>Revisión de tu modelo de negocio y tus métodos de cobro</li>
+          <li>Recomendación de estructura: persona natural, firma o LLC</li>
+          <li>Resumen escrito con tus próximos pasos</li>
+        </ul>
+        <a class="btn primary" href="#reservar" data-plan="Sesión de orientación 1 a 1 ($30)">Agendar mi sesión</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="autor" style="border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="author">
+        <div class="avatar" aria-hidden="true">RP</div>
+        <div class="author-copy">
+          <span class="label">Quién la escribe</span>
+          <h2>Abg. Ricardo Pineda</h2>
+          <p>Abogado venezolano. Escribí esta guía porque veo a diario a emprendedores con buenos productos que se frenan por no saber cómo cobrar, cómo formalizarse o qué riesgos están asumiendo.</p>
+          <p>Aquí está lo que necesitas saber, explicado sin jerga, con el criterio de alguien que conoce las reglas y también el día a día de emprender en Venezuela.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reservar" class="band">
+    <div class="wrap reserve-grid">
+      <div class="section-head" style="margin-bottom:0">
+        <span class="label">Reservar</span>
+        <h2>Reserva tu sesión o tu guía en un minuto.</h2>
+        <p>Completa tus datos y envíanos el mensaje por WhatsApp. Te respondemos con los datos de pago y te confirmamos la reserva.</p>
+        <div class="pay-list" aria-label="Métodos de pago"><span>USDT · Binance</span><span>Pago Móvil</span></div>
+      </div>
+
+      <form id="reserve-form" novalidate>
+        <div class="row">
+          <label for="f-name">Nombre<input id="f-name" name="name" autocomplete="name" placeholder="María Rodríguez" required></label>
+          <label for="f-email">Correo<input id="f-email" name="email" type="email" autocomplete="email" placeholder="maria@correo.com" required></label>
+        </div>
+        <div class="row">
+          <label for="f-plan">Producto
+            <select id="f-plan" name="plan">
+              <option>Sesión de orientación 1 a 1 ($30)</option>
+              <option>Paquete completo ($47)</option>
+              <option>Guía ($37)</option>
+              <option>Kit de plantillas ($19)</option>
+            </select>
+          </label>
+          <label for="f-pay">Método de pago
+            <select id="f-pay" name="pay">
+              <option>USDT · Binance</option>
+              <option>Pago Móvil</option>
+            </select>
+          </label>
+        </div>
+        <button class="btn primary" type="submit">Preparar mi reserva</button>
+        <p class="small" id="form-error" role="alert" hidden>Escribe tu nombre y un correo válido para continuar.</p>
+        <div class="result" id="result" hidden>
+          <span class="label">Tu mensaje de reserva</span>
+          <pre id="result-text"></pre>
+          <div class="actions">
+            <a class="btn primary" id="wa-link" href="#" target="_blank" rel="noopener" hidden>Enviar por WhatsApp</a>
+            <button class="btn" type="button" id="copy-btn">Copiar mensaje</button>
+          </div>
+          <p class="small" id="wa-fallback">Si el botón no abre WhatsApp, copia el mensaje y envíalo a <strong>+58 414-401-2018</strong> o <strong>+58 426-245-2890</strong>.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section id="preguntas">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">Preguntas frecuentes</span>
+        <h2>Lo que más nos preguntan.</h2>
+      </div>
+      <div class="faq">
+        <details><summary>¿Necesito tener una empresa en Estados Unidos?</summary><p>No para empezar. La guía explica qué puedes hacer como persona natural desde Venezuela y en qué momento una LLC te abre más puertas, con sus costos reales.</p></details>
+        <details><summary>¿Sirve si vivo fuera de Venezuela?</summary><p>Sí. Está pensada para venezolanos dentro y fuera del país, y la mayoría de los pasos aplican igual en el resto de Latinoamérica.</p></details>
+        <details><summary>¿Cuándo recibo la guía?</summary><p>Al confirmar tu pago te escribimos con la fecha de entrega de la preventa. La recibes por correo en PDF apenas esté publicada.</p></details>
+        <details><summary>¿Necesito saber de tecnología?</summary><p>No. Cada paso está explicado para alguien que nunca ha vendido en línea.</p></details>
+        <details><summary>¿Esto reemplaza la asesoría de un abogado?</summary><p>No. Es contenido educativo general. Si tu caso tiene particularidades, lo recomendable es una consulta profesional.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Salvoconducto Digital · WhatsApp +58 414-401-2018 · +58 426-245-2890</span>
+    <p>Contenido educativo. No constituye asesoría legal, fiscal ni financiera personalizada.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Número de WhatsApp en formato internacional, solo dígitos (ej. "584121234567"). Vacío = muestra el mensaje para copiar.
+  var WHATSAPP = "584144012018";
+  var form = document.getElementById("reserve-form");
+  var planSel = document.getElementById("f-plan");
+  document.querySelectorAll("[data-plan]").forEach(function(a){
+    a.addEventListener("click", function(){ planSel.value = a.getAttribute("data-plan"); });
+  });
+  var msg = "";
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var name = document.getElementById("f-name").value.trim();
+    var email = document.getElementById("f-email").value.trim();
+    var err = document.getElementById("form-error");
+    if(!name || !/^\S+@\S+\.\S+$/.test(email)){ err.hidden = false; return; }
+    err.hidden = true;
+    msg = "Hola, quiero reservar en la preventa de Salvoconducto Digital.\n" +
+      "Nombre: " + name + "\nCorreo: " + email +
+      "\nProducto: " + planSel.value +
+      "\nMétodo de pago: " + document.getElementById("f-pay").value;
+    document.getElementById("result-text").textContent = msg;
+    var wa = document.getElementById("wa-link");
+    var fb = document.getElementById("wa-fallback");
+    if(WHATSAPP){
+      wa.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
+      wa.hidden = false;
+    } else { wa.hidden = true; }
+    fb.hidden = false;
+    document.getElementById("result").hidden = false;
+  });
+  document.getElementById("copy-btn").addEventListener("click", function(){
+    var btn = this, pre = document.getElementById("result-text");
+    function selectText(){ var r = document.createRange(); r.selectNodeContents(pre); var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = "Texto seleccionado"; }
+    try{
+      navigator.clipboard.writeText(msg).then(function(){ btn.textContent = "Copiado"; }, selectText);
+    }catch(x){ selectText(); }
+  });
+})();
+</script>
+
+</body>
+</html>
